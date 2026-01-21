@@ -1,0 +1,13 @@
+{
+  "email": "ваш@email.com",
+  "password": "gAAAAABpcMyCVSMurzaIzrW_IpDCkXuQB9oc4Ihr6_z9iyzpK15xDAouOXOwhDv--6_wWCFPfC_tYYqCibCP5FmpfOYivbayf6NKUK40tVnI3afgvGYz_TQ5jW2EUy5u7heosQk0sLue",
+  "remote_host": "localhost",
+  "remote_port": "3000",
+  "remote_protocol": "ws",
+  "use_remote": false,
+  "browser": "firefox",
+  "headless": false,
+  "timeout": 30000,
+  "default_delay": 1.0,
+  "max_history": 50
+}

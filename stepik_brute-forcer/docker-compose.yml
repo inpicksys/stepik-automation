@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  stepik-brute:
+    build: .
+    container_name: stepik-brute-forcer
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "8080:8080"  # Для веб-интерфейса (если добавим)
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TZ=Europe/Moscow
+    networks:
+      - stepik-network
+
+  playwright-server:
+    image: mcr.microsoft.com/playwright/python:v1.40.0-focal
+    container_name: playwright-server
+    restart: unless-stopped
+    command: playwright run-server --port 3001 --host 0.0.0.0
+    ports:
+      - "3001:3001"
+    networks:
+      - stepik-network
+
+networks:
+  stepik-network:
+    driver: bridge
